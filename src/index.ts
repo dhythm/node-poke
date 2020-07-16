@@ -9,13 +9,11 @@ const app = async () => {
   });
 
   const payload = (await Promise.all(details)).map((data: any) => ({
+    dexId: data.order,
     name: data.name,
     image: data.sprites["front_default"],
   }));
   console.log({ payload });
 };
 
-// (async function () {
-//   await app();
-// })();
 app();
